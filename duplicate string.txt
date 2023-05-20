@@ -1,0 +1,23 @@
+import java.util.HashMap;
+import java.util.Scanner;
+public class DuplicateString {
+    private String name;
+    public static void main(String[] args){
+        Scanner input=new Scanner(System.in);
+        DuplicateString ashik=new DuplicateString();
+        System.out.println("Enter your name= ");
+        ashik.name=input.next();
+        char[] names=ashik.name.toCharArray();
+        System.out.println(names.length);
+        HashMap<Character,Integer> duplicateString=new HashMap<>();
+        for(char i:names){
+            if(duplicateString.containsKey(i)){
+                duplicateString.put(i,duplicateString.get(i)+1);
+            }else
+                duplicateString.put(i,1);
+        }
+        System.out.println(duplicateString.toString());
+
+    }
+
+}
